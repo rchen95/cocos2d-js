@@ -1,4 +1,6 @@
 var AnimationLayer = cc.Layer.extend({
+
+
     ctor:function () {
         this._super();
 
@@ -8,5 +10,6 @@ var AnimationLayer = cc.Layer.extend({
         var actionTo = cc.MoveTo.create(2, cc.p(300, 85));
         spriteRunner.runAction(cc.Sequence.create(actionTo));
         this.addChild(spriteRunner);
+
     }
 });
