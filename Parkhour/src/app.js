@@ -16,10 +16,15 @@ var HelloWorldLayer = cc.Layer.extend({
 
         cc.MenuItemFont.setFontSize(60);                 //设置菜单字体
 
+        var newGameNormal = cc.Sprite.create(res.s_start_n, cc.rect(0, 0, 252, 86));
+        var newGameSelected = cc.Sprite.create(res.s_start_s, cc.rect(0, 0, 252, 86));
+        var newGameDisabled = cc.Sprite.create(res.s_start_n, cc.rect(0, 0, 252, 86));
+
         //创建一个精灵菜单项
         var menuItemPlay = cc.MenuItemSprite.create(
-            cc.Sprite.create(res.s_start_n),         //normal状态图片
-            cc.Sprite.create(res.s_start_s),         //select状态图片
+            newGameNormal,         //normal状态图片
+            newGameSelected,         //select状态图片
+            newGameDisabled,
             this.onPlay, this);                      //回调方法以及对应的对象
         var menu = cc.Menu.create(menuItemPlay);     //创建彩蛋
         menu.setPosition(centerPos);
@@ -32,7 +37,7 @@ var HelloWorldLayer = cc.Layer.extend({
     // on play button clicked
     onPlay: function (sender) {//sender是发送者实例
         cc.log("==onPlay clicked");
-        cc.director.replaceScene(new PlayScene());
+        cc.director.runScene(new PlayScene());
     }
 });
 
