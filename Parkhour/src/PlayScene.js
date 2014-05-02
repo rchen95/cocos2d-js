@@ -6,9 +6,9 @@ var PlayScene = cc.Scene.extend({
         this._super();
 
         this.initPhysics();
-        this.addChild(new BackgroundLayer());
-        this.addChild(new AnimationLayer(this.space));
-        this.addChild(new StatusLayer());
+        this.addChild(new BackgroundLayer(), 0, TagOfLayer.background);
+        this.addChild(new AnimationLayer(this.space), 0, TagOfLayer.Animation);
+        this.addChild(new StatusLayer(), 0, TagOfLayer.Status);
 
         //Schedules the "update" method
         this.scheduleUpdate();

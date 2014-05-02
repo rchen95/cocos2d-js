@@ -49,6 +49,17 @@ var AnimationLayer = cc.Layer.extend({
         this.spriteSheet.addChild(this.sprite);
 
     },
+    getEyeX:function () {
+        return this.sprite.getPositionX() - g_runnerStartX;
+    },
+
+    update:function (dt) {
+        var eyeX = this.sprite.getPositionX() - g_runnerStartX;
+        var camera = this.getCamera();
+        var eyeZ = cc.Camera.getZEye();
+        camera.setEye(eyeX, 0, eyeZ);
+        camera.setCenter(eyeX, 0, 0);
+    },
     onExit:function () {
         this._super();
         spriteFrameCache.removeSpriteFramesFromFile(res.s_runnerplist);
