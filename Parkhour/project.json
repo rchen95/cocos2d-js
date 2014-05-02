@@ -1,6 +1,7 @@
 {
     "project_type": "javascript",
 
+    "chipmunk": true,
     "debugMode" : 1,
     "showFPS" : true,
     "frameRate" : 60,
@@ -8,7 +9,7 @@
     "renderMode" : 0,
     "engineDir":"frameworks/cocos2d-html5",
 
-    "modules" : ["cocos2d"],
+    "modules" : ["cocos2d", "extensions", "external"],
 
     "jsList" : [
         "src/resource.js",
@@ -16,6 +17,7 @@
         "src/PlayScene.js",
         "src/BackgroundLayer.js",
         "src/AnimationLayer.js",
-        "src/StatusLayer.js"
+        "src/StatusLayer.js",
+        "src/globals.js"
     ]
 }

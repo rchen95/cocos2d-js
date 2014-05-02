@@ -1,10 +1,20 @@
+
+var spriteFrameCache = cc.spriteFrameCache;
+
 var AnimationLayer = cc.Layer.extend({
     spriteSheet:null,
     runningAction:null,
     sprite:null,
 
-    ctor:function () {
+    space:null,
+    body:null,
+    shape:null,
+
+    ctor:function (space) {
         this._super();
+
+
+        this.space = space;
 
         // create sprite sheet
         cc.spriteFrameCache.addSpriteFrames(res.s_runnerplist);
@@ -22,10 +32,25 @@ var AnimationLayer = cc.Layer.extend({
         var animation = cc.Animation.create(animFrames, 0.1);
         this.runningAction = cc.RepeatForever.create(cc.Animate.create(animation));
 
-        this.sprite = cc.Sprite.create("#runner0.png");
-        this.sprite.setPosition(cc.p(80, 85));
+        this.sprite = cc.PhysicsSprite.create("#runner0.png");
+        var contentSize = this.sprite.getContentSize();
+
+        // init body
+        this.body = new cp.Body(1, cp.momentForBox(1, contentSize.width, contentSize.height));
+        this.body.p = cc.p(g_runnerStartX, g_groundHight + contentSize.height / 2);
+        this.body.applyImpulse(cp.v(150, 0), cp.v(0, 0));//run speed
+        this.space.addBody(this.body);
+        //init shape
+        this.shape = new cp.BoxShape(this.body, contentSize.width - 14, contentSize.height);
+        this.space.addShape(this.shape);
+
+        this.sprite.setBody(this.body);
         this.sprite.runAction(this.runningAction);
         this.spriteSheet.addChild(this.sprite);
 
+    },
+    onExit:function () {
+        this._super();
+        spriteFrameCache.removeSpriteFramesFromFile(res.s_runnerplist);
     }
 });
