@@ -18,6 +18,8 @@
         "src/BackgroundLayer.js",
         "src/AnimationLayer.js",
         "src/StatusLayer.js",
-        "src/globals.js"
+        "src/globals.js",
+        "src/Coin.js",
+        "src/Rock.js"
     ]
 }

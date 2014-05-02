@@ -6,7 +6,10 @@ var res = {
     s_runnerplist: "res/runner.plist",
     s_map : "res/map.png",
     s_map00 : "res/map00.tmx",
-    s_map01 : "res/map01.tmx"
+    s_map01 : "res/map01.tmx",
+    s_background : "res/background.png",
+    s_backgroundplist : "res/background.plist"
+
 };
 
 var g_resources = [
@@ -14,10 +17,12 @@ var g_resources = [
     res.s_HelloBG,
     res.s_start_n,
     res.s_start_s,
-    res.s_runner,
-    res.s_runnerplist,
 
     //plist
+    res.s_runner,
+    res.s_runnerplist,
+    res.s_background,
+    res.s_backgroundplist,
 
     //fnt
 
@@ -30,9 +35,3 @@ var g_resources = [
 
     //effect
 ];
-
-var g_tilemaps = [
-    res.s_map,
-    res.s_map00,
-    res.s_map01
-    ];
