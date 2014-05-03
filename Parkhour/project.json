@@ -13,6 +13,7 @@
 
     "jsList" : [
         "src/resource.js",
+        "src/Loading.js",
         "src/app.js",
         "src/PlayScene.js",
         "src/BackgroundLayer.js",
