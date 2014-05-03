@@ -140,17 +140,20 @@ var AnimationLayer = cc.Layer.extend({
 
     onTouchBegan:function(touch, event) {
         var pos = touch.getLocation();
-        this.recognizer.beginPoint(pos.x, pos.y);
+        event.getCurrentTarget().recognizer.beginPoint(pos.x, pos.y);
+        //this.recognizer.beginPoint(pos.x, pos.y);
         return true;
     },
 
     onTouchMoved:function(touch, event) {
         var pos = touch.getLocation();
-        this.recognizer.movePoint(pos.x, pos.y);
+        //this.recognizer.movePoint(pos.x, pos.y);
+        event.getCurrentTarget().recognizer.movePoint(pos.x, pos.y);
     },
 
     onTouchEnded:function(touch, event) {
-        var rtn = this.recognizer.endPoint();
+        //var rtn = this.recognizer.endPoint();
+        var rtn = event.getCurrentTarget()..recognizer.endPoint();
 
         switch (rtn) {
             case "up":
