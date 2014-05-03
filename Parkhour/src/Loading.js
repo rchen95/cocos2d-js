@@ -87,7 +87,7 @@ Loading = cc.Scene.extend(/** @lends cc.LoaderScene# */{
         // this._processLayer.ignoreAnchorPointForPosition(false);
         // this._processLayer.setAnchorPoint(cc.p(0, 0));
 
-        this._bgLayer.addChild(this._processLayer);
+        bgLayer.addChild(this._processLayer);
 
         return true;
     },
