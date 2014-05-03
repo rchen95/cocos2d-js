@@ -6,6 +6,9 @@ var PlayScene = cc.Scene.extend({
     onEnter:function () {
         this._super();
 
+        cc.director.resume();
+        this.shapesToRemove = [];
+
         this.initPhysics();
         this.addChild(new BackgroundLayer(this.space), 0, TagOfLayer.background);
         this.addChild(new AnimationLayer(this.space), 0, TagOfLayer.Animation);
@@ -40,10 +43,15 @@ var PlayScene = cc.Scene.extend({
         var shapes = arbiter.getShapes();
         // shapes[0] is runner
         this.shapesToRemove.push(shapes[1]);
+
+        var statusLayer = this.getChildByTag(TagOfLayer.Status);
+        statusLayer.addCoin(1);
     },
 
     collisionRockBegin:function (arbiter, space) {
         cc.log("==game over");
+        cc.director.pause();
+        this.addChild(new GameOverLayer());
     },
 
     update:function (dt) {
