@@ -6,10 +6,16 @@ var GameOverLayer = cc.LayerColor.extend({
 
         var winSize = cc.director.getWinSize();
         var centerPos = cc.p(winSize.width / 2, winSize.height / 2);
+
+        var restartNormal = cc.Sprite.create(res.s_restart_n);
+        var restartSelected = cc.Sprite.create(res.s_restart_s);
+        var restartDisabled = cc.Sprite.create(res.s_restart_n);
+
         cc.MenuItemFont.setFontSize(30);
         var menuItemRestart = cc.MenuItemSprite.create(
-            cc.Sprite.create(res.s_restart_n),
-            cc.Sprite.create(res.s_restart_s),
+            restartNormal,
+            restartSelected,
+            restartDisabled,
             this.onRestart, this);
         var menu = cc.Menu.create(menuItemRestart);
         menu.setPosition(centerPos);
@@ -21,7 +27,8 @@ var GameOverLayer = cc.LayerColor.extend({
     onRestart:function (sender) {
         var director = cc.director;
         var play = new PlayScene();
-        director.replaceScene(play);
+        //director.replaceScene(play);
+        director.runScene(play);
 
     }
 });

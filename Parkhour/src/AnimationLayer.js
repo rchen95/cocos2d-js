@@ -153,11 +153,11 @@ var AnimationLayer = cc.Layer.extend({
 
     onTouchEnded:function(touch, event) {
         //var rtn = this.recognizer.endPoint();
-        var rtn = event.getCurrentTarget()..recognizer.endPoint();
+        var rtn = event.getCurrentTarget().recognizer.endPoint();
 
         switch (rtn) {
             case "up":
-                this.jump();
+                event.getCurrentTarget().jump();
                 break;
             default:
                 break;
