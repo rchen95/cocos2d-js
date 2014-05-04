@@ -43,9 +43,9 @@ var AnimationLayer = cc.Layer.extend({
         var contentSize = this.sprite.getContentSize();
 
         // init body
-        this.body = new cp.Body(1, cp.momentForBox(1, contentSize.width, contentSize.height));
-        this.body.p = cc.p(g_runnerStartX, g_groundHight + contentSize.height / 2);
-        this.body.applyImpulse(cp.v(150, 0), cp.v(0, 0));//run speed
+        this.body = new cp.Body(1, cp.momentForBox(1, contentSize.width, contentSize.height));  // init the runner physic body
+        this.body.p = cc.p(g_runnerStartX, g_groundHight + contentSize.height / 2);             // set the position of the runner
+        this.body.applyImpulse(cp.v(150, 0), cp.v(0, 0));                                       // run speed, apply impulse to the body
         this.space.addBody(this.body);
         //init shape
         this.shape = new cp.BoxShape(this.body, contentSize.width - 14, contentSize.height);
@@ -170,6 +170,8 @@ var AnimationLayer = cc.Layer.extend({
             this.stat = RunnerStat.jumpUp;
             this.sprite.stopAllActions();
             this.sprite.runAction(this.jumpUpAction);
+
+            audioEngine.playEffect(res.s_music_jump);
         }
     }
 

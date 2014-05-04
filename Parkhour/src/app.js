@@ -31,6 +31,12 @@ var HelloWorldLayer = cc.Layer.extend({
         this.addChild(menu);//添加到layer
 
 
+        // preload music
+        audioEngine = cc.audioEngine;
+        //audioEngine.preloadBackgroundMusic(res.s_music_background);
+        //audioEngine.preloadEffect(res.s_music_jump);
+        //audioEngine.preloadEffect(res.s_music_pickup_coin);
+
         return true;
     },
 

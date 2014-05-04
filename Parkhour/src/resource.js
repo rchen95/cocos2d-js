@@ -10,7 +10,11 @@ var res = {
     s_map00 : "res/map00.tmx",
     s_map01 : "res/map01.tmx",
     s_background : "res/background.png",
-    s_backgroundplist : "res/background.plist"
+    s_backgroundplist : "res/background.plist",
+
+    s_music_background : "res/background.ogg",
+    s_music_jump : "res/jump.ogg",
+    s_music_pickup_coin : "res/pickup_coin.ogg"
 
 };
 
@@ -33,9 +37,12 @@ var g_resources = [
     //tmx
     res.s_map,
     res.s_map00,
-    res.s_map01
+    res.s_map01,
 
     //bgm
 
     //effect
+    res.s_music_background,
+    res.s_music_jump,
+    res.s_music_pickup_coin
 ];

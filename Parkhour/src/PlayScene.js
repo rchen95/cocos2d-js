@@ -16,6 +16,8 @@ var PlayScene = cc.Scene.extend({
         this.addChild(anim, 0, TagOfLayer.Animation);
         this.addChild(new StatusLayer(), 0, TagOfLayer.Status);
 
+        audioEngine.playMusic(res.s_music_background, true);
+
         //Schedules the "update" method
         this.scheduleUpdate();
     },
@@ -48,6 +50,8 @@ var PlayScene = cc.Scene.extend({
 
         var statusLayer = this.getChildByTag(TagOfLayer.Status);
         statusLayer.addCoin(1);
+
+        audioEngine.playEffect(res.s_music_pickup_coin);
     },
 
     collisionRockBegin:function (arbiter, space) {
@@ -55,6 +59,8 @@ var PlayScene = cc.Scene.extend({
         cc.director.pause();
         //this.unscheduleUpdate();
         this.addChild(new GameOverLayer());
+
+        audioEngine.stopMusic();
     },
 
     update:function (dt) {
