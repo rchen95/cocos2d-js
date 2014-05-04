@@ -172,4 +172,13 @@ var AnimationLayer = cc.Layer.extend({
             this.sprite.runAction(this.jumpUpAction);
         }
     }
+
 });
+
+AnimationLayer.prototype.setupDebugNode = function(enable)
+{
+    // debug only
+    this._debugNode = cc.PhysicsDebugNode.create( this.space );
+    this._debugNode.visible = enable ;
+    this.addChild( this._debugNode );
+};

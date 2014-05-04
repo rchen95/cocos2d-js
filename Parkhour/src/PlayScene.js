@@ -11,7 +11,9 @@ var PlayScene = cc.Scene.extend({
 
         this.initPhysics();
         this.addChild(new BackgroundLayer(this.space), 0, TagOfLayer.background);
-        this.addChild(new AnimationLayer(this.space), 0, TagOfLayer.Animation);
+        var anim = new AnimationLayer(this.space);
+        anim.setupDebugNode(true);
+        this.addChild(anim, 0, TagOfLayer.Animation);
         this.addChild(new StatusLayer(), 0, TagOfLayer.Status);
 
         //Schedules the "update" method
