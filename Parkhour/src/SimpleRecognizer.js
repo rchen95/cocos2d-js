@@ -1,3 +1,4 @@
+// same as dollar library
 function Point(x, y)
 {
 	this.X = x;

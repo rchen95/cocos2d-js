@@ -2,12 +2,12 @@ var Coin = cc.Class.extend({
     space:null,
     sprite:null,
     shape:null,
-    _mapIndex:0,// which map belongs to
-    get mapIndex() {
-        return this._mapIndex;
-    },
-    set mapIndex(index) {
-        this._mapIndex = index;
+    _map:0,// which map belong to
+    get map() {
+        return this._map;
+    }, 
+    set map(newMap) {
+        this._map = newMap;
     },
 
     /** Constructor
@@ -26,7 +26,7 @@ var Coin = cc.Class.extend({
             animFrames.push(frame);
         }
 
-        var animation = cc.Animation.create(animFrames, 0.2);
+        var animation = cc.Animation.create(animFrames, 0.1);
         var action = cc.RepeatForever.create(cc.Animate.create(animation));
 
         this.sprite = cc.PhysicsSprite.create("#coin0.png");
@@ -44,6 +44,9 @@ var Coin = cc.Class.extend({
 
         this.space.addStaticShape(this.shape);
 
+        // Needed for collision
+        //body.setUserData(this);
+
         // add sprite to sprite sheet
         this.sprite.runAction(action);
         spriteSheet.addChild(this.sprite, 1);
@@ -60,3 +63,13 @@ var Coin = cc.Class.extend({
         return this.shape;
     }
 });
+
+// static method for Class Coin.
+var gCoinContentSize = null;
+Coin.getContentSize = function () {
+    if (null == gCoinContentSize) {
+        var sprite = cc.PhysicsSprite.create("#coin0.png");
+        gCoinContentSize = sprite.getContentSize();
+    }
+    return gCoinContentSize;
+};

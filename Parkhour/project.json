@@ -13,16 +13,17 @@
 
     "jsList" : [
         "src/resource.js",
-        "src/Loading.js",
         "src/app.js",
-        "src/PlayScene.js",
-        "src/BackgroundLayer.js",
-        "src/AnimationLayer.js",
-        "src/StatusLayer.js",
-        "src/globals.js",
         "src/Coin.js",
-        "src/Rock.js",
+        "src/dollar.js",
         "src/GameOverLayer.js",
-        "src/SimpleRecognizer.js"
+        "src/Map.js",
+        "src/ObjectManager.js",
+        "src/PlayScene.js",
+        "src/Rock.js",
+        "src/Runner.js",
+        "src/SimpleRecognizer.js",
+        "src/Utils.js",
+        "src/StatusLayer.js"
     ]
 }

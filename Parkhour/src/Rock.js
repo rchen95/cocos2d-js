@@ -15,21 +15,30 @@ var Rock = cc.Class.extend({
      * @param {cp.Space *}
      * @param {cc.p}
      */
-    ctor:function (spriteSheet, space, posX) {
+    ctor:function (spriteSheet, space, pos) {
         this.space = space;
 
-        this.sprite = cc.PhysicsSprite.create("#rock.png");
+        if (pos.y >= (g_groundHight + Runner.getCrouchContentSize().height)) {
+            this.sprite = cc.PhysicsSprite.create("#hathpace.png");
+        } else {
+            this.sprite = cc.PhysicsSprite.create("#rock.png");
+        }
+
         var body = new cp.StaticBody();
-        body.setPos(cc.p(posX, this.sprite.getContentSize().height / 2 + g_groundHight));
+        body.setPos(pos);
         this.sprite.setBody(body);
 
         this.shape = new cp.BoxShape(body,
                 this.sprite.getContentSize().width,
                 this.sprite.getContentSize().height);
         this.shape.setCollisionType(SpriteTag.rock);
+        this.shape.setSensor(true);
 
         this.space.addStaticShape(this.shape);
         spriteSheet.addChild(this.sprite);
+
+        // Needed for collision
+        //body.setUserData(this);
     },
 
     removeFromParent:function () {
@@ -43,3 +52,13 @@ var Rock = cc.Class.extend({
         return this.shape;
     }
 });
+
+// static method for Class Rock.
+var gRockContentSize = null;
+Rock.getContentSize = function () {
+    if (null == gRockContentSize) {
+        var sprite = cc.PhysicsSprite.create("#rock.png");
+        gRockContentSize = sprite.getContentSize();
+    }
+    return gRockContentSize;
+};

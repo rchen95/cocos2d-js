@@ -16,9 +16,9 @@ var HelloWorldLayer = cc.Layer.extend({
 
         cc.MenuItemFont.setFontSize(60);                 //设置菜单字体
 
-        var newGameNormal = cc.Sprite.create(res.s_start_n, cc.rect(0, 0, 252, 86));
-        var newGameSelected = cc.Sprite.create(res.s_start_s, cc.rect(0, 0, 252, 86));
-        var newGameDisabled = cc.Sprite.create(res.s_start_n, cc.rect(0, 0, 252, 86));
+        var newGameNormal = cc.Sprite.create(res.s_start_n);
+        var newGameSelected = cc.Sprite.create(res.s_start_s);
+        var newGameDisabled = cc.Sprite.create(res.s_start_n);
 
         //创建一个精灵菜单项
         var menuItemPlay = cc.MenuItemSprite.create(
@@ -36,6 +36,7 @@ var HelloWorldLayer = cc.Layer.extend({
         //audioEngine.preloadBackgroundMusic(res.s_music_background);
         //audioEngine.preloadEffect(res.s_music_jump);
         //audioEngine.preloadEffect(res.s_music_pickup_coin);
+        audioEngine.setMusicVolume(0.3);
 
         return true;
     },
@@ -43,7 +44,7 @@ var HelloWorldLayer = cc.Layer.extend({
     // on play button clicked
     onPlay: function (sender) {//sender是发送者实例
         cc.log("==onPlay clicked");
-        cc.director.runScene(new PlayScene());
+        cc.director.runScene(PlayLayer.scene());
     }
 });
 
