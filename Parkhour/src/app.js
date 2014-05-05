@@ -1,3 +1,5 @@
+//http://www.ityran.com/archives/5110
+
 var HelloWorldLayer = cc.Layer.extend({
     sprite: null,
     ctor: function () {

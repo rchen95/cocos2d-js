@@ -172,7 +172,7 @@ var Runner = cc.Node.extend({
         this.scheduleOnce(this.runningHulk, 3.0);
 
         this._emitter = cc.ParticleFlower.create();
-        var myTexture = cc.TextureCache.getInstance().addImage(s_star);
+        var myTexture = cc.textureCache.addImage(res.s_star);
         this._emitter.setTexture(myTexture);
         this._emitter.setPosition(this.sprite.getPositionX(), this.sprite.getPositionY());
         this.addChild(this._emitter, 10);
