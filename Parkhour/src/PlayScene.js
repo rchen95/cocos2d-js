@@ -194,7 +194,7 @@ var PlayLayer = cc.Layer.extend({
         statusLayer.updateMeter(this.runner.getPositionX());
 
         // move Camera
-        this.lastEyeX = this.runner.getPositionX() - this.runner.offsetPx;
+        this.lastEyeX = this.runner.getPositionX()  - this.runner.offsetPx;
         var camera = this.getCamera();
         var eyeZ = cc.Camera.getZEye();
         camera.setEye(this.lastEyeX, 0, eyeZ);
