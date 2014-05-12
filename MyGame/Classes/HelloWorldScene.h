@@ -3,7 +3,7 @@
 
 #include "cocos2d.h"
 #include "extensions/cocos-ext.h"
-//#include "cocostudio/CocoStudio.h"
+#include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
 
@@ -34,6 +34,8 @@ public:
     void changeRunning();
     void runningSchedule(float dt);
     void touchButton(Ref *pSender, cocos2d::ui::TouchEventType eventType);
+    void movementCallback(cocostudio::Armature * armature, cocostudio::MovementEventType type, const char * name);
+
     
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);

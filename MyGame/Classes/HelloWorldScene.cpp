@@ -8,6 +8,14 @@ const int UI_LOADINGBAR_LOADING = 8;
 const int UI_LABELATLAS_LIFENUM = 6;
 
 
+const int UI_BUTTON_PLAY1 = 4;
+const int UI_BUTTON_PLAY2 = 5;
+const int UI_BUTTON_CONN = 6;
+const int UI_BUTTON_CANCEL = 7;
+
+const int AM_MYANIMATION=30;
+
+
 //USING_NS_CC;
 //using namespace cocos2d::ui;
 
@@ -91,14 +99,33 @@ bool HelloWorld::init()
     _uiLayer = Layer::create();
     addChild(_uiLayer);
     
-    _widget = dynamic_cast<cocos2d::ui::Layout*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("TestUI_1.json"));
+    _widget = dynamic_cast<cocos2d::ui::Layout*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("MyUI_1/MyUI_1.json"));
     _uiLayer->addChild(_widget);
     
-    Button* startBtn = dynamic_cast<Button*>(_widget->getChildByTag(UI_BUTTON_START));
-    startBtn->addTouchEventListener(this,toucheventselector(HelloWorld::touchButton));
+    Button* play1Btn = dynamic_cast<Button*>(_widget->getChildByTag(UI_BUTTON_PLAY1));
+    play1Btn->addTouchEventListener(this,toucheventselector(HelloWorld::touchButton));
     
-    Button* pauseBtn = dynamic_cast<Button*>(_widget->getChildByTag(UI_BUTTON_CLEAR));
-    pauseBtn->addTouchEventListener(this,toucheventselector(HelloWorld::touchButton));
+    Button* play2Btn = dynamic_cast<Button*>(_widget->getChildByTag(UI_BUTTON_PLAY2));
+    play2Btn->addTouchEventListener(this,toucheventselector(HelloWorld::touchButton));
+    
+    Button* connBtn = dynamic_cast<Button*>(_widget->getChildByTag(UI_BUTTON_CONN));
+    connBtn->addTouchEventListener(this,toucheventselector(HelloWorld::touchButton));
+    
+    Button* cancelBtn = dynamic_cast<Button*>(_widget->getChildByTag(UI_BUTTON_CANCEL));
+    cancelBtn->addTouchEventListener(this,toucheventselector(HelloWorld::touchButton));
+    
+    
+    
+    cocostudio::ArmatureDataManager::getInstance()->addArmatureFileInfo("MyAnimation/MyAnimation.ExportJson");
+    cocostudio::Armature* armature = cocostudio::Armature::create("MyAnimation");
+    armature->setTag(AM_MYANIMATION);
+    
+    Size visibleSize = Director::getInstance()->getVisibleSize();
+    Point origin = Director::getInstance()->getVisibleOrigin();
+    
+    armature->setPosition(Point(origin.x + visibleSize.width/2 ,
+                                origin.y + visibleSize.height/2));
+    this->addChild(armature);
     
     return true;
 }
@@ -107,7 +134,8 @@ bool HelloWorld::init()
 void HelloWorld::touchButton(Ref *pSender,TouchEventType eventType)
 {
     auto button = dynamic_cast<Button*>(pSender);
-    int tag = button->getTag();
+    
+    /*int tag = button->getTag();
     switch(eventType)
     {
         case TouchEventType::TOUCH_EVENT_ENDED:
@@ -119,7 +147,47 @@ void HelloWorld::touchButton(Ref *pSender,TouchEventType eventType)
             {
                 clearRunning();
             }  
-    }  
+    }*/
+    
+    int tag = button->getTag();
+    auto armature = (cocostudio::Armature*)getChildByTag(AM_MYANIMATION);
+    switch (eventType)
+    {
+        case TouchEventType::TOUCH_EVENT_ENDED:
+            if(tag == UI_BUTTON_PLAY1)
+            {
+                armature->getAnimation()->play("hit");
+            }
+            else if(tag ==UI_BUTTON_PLAY2)
+            {
+                armature->getAnimation()->play("hit2");
+            }
+            else if(tag == UI_BUTTON_CONN)
+            {
+                //will conn
+                armature->getAnimation()->setMovementEventCallFunc(this,movementEvent_selector(HelloWorld::movementCallback));
+            }
+            else if(tag == UI_BUTTON_CANCEL)
+            {
+                //will dis conn
+                armature->getAnimation()->setMovementEventCallFunc(this,nullptr);
+            }
+            break;
+        default:
+            break;
+    }
+}
+                                                                   
+void HelloWorld::movementCallback(cocostudio::Armature * armature, cocostudio::MovementEventType type, const char * name)
+{
+    if (type == cocostudio::LOOP_COMPLETE)
+    {
+        if (strcmp(name,"\x06hit") == 0)
+        {
+            cocostudio::Armature* arm = (cocostudio::Armature*) getChildByTag(AM_MYANIMATION);
+            arm->getAnimation()->play("hit2");
+        }
+    }
 }
 
 void HelloWorld::runningSchedule(float dt)

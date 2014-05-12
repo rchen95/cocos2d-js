@@ -69,6 +69,8 @@
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
+		DA8EF86F19203ECA008069AA /* MyUI_1 in Resources */ = {isa = PBXBuildFile; fileRef = DA8EF86E19203ECA008069AA /* MyUI_1 */; };
+		DA8EF87319203EEB008069AA /* MyAnimation in Resources */ = {isa = PBXBuildFile; fileRef = DA8EF87219203EEB008069AA /* MyAnimation */; };
 		DAAAE6D2191DC6A5007A88F5 /* GUI in Resources */ = {isa = PBXBuildFile; fileRef = DAAAE6D0191DC6A5007A88F5 /* GUI */; };
 		DAAAE6D3191DC6A5007A88F5 /* TestUI_1.json in Resources */ = {isa = PBXBuildFile; fileRef = DAAAE6D1191DC6A5007A88F5 /* TestUI_1.json */; };
 /* End PBXBuildFile section */
@@ -269,6 +271,8 @@
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		DA8EF86E19203ECA008069AA /* MyUI_1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MyUI_1; sourceTree = "<group>"; };
+		DA8EF87219203EEB008069AA /* MyAnimation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MyAnimation; sourceTree = "<group>"; };
 		DAAAE6D0191DC6A5007A88F5 /* GUI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GUI; sourceTree = "<group>"; };
 		DAAAE6D1191DC6A5007A88F5 /* TestUI_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestUI_1.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -459,6 +463,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DA8EF87219203EEB008069AA /* MyAnimation */,
+				DA8EF86E19203ECA008069AA /* MyUI_1 */,
 				DAAAE6D0191DC6A5007A88F5 /* GUI */,
 				DAAAE6D1191DC6A5007A88F5 /* TestUI_1.json */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
@@ -633,10 +639,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA8EF86F19203ECA008069AA /* MyUI_1 in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
+				DA8EF87319203EEB008069AA /* MyAnimation in Resources */,
 				DAAAE6D2191DC6A5007A88F5 /* GUI in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
