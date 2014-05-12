@@ -15,6 +15,8 @@ const int UI_BUTTON_CANCEL = 7;
 
 const int AM_MYANIMATION=30;
 
+int displayIndex;
+
 
 //USING_NS_CC;
 //using namespace cocos2d::ui;
@@ -99,6 +101,7 @@ bool HelloWorld::init()
     _uiLayer = Layer::create();
     addChild(_uiLayer);
     
+    /*
     _widget = dynamic_cast<cocos2d::ui::Layout*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("MyUI_1/MyUI_1.json"));
     _uiLayer->addChild(_widget);
     
@@ -113,12 +116,13 @@ bool HelloWorld::init()
     
     Button* cancelBtn = dynamic_cast<Button*>(_widget->getChildByTag(UI_BUTTON_CANCEL));
     cancelBtn->addTouchEventListener(this,toucheventselector(HelloWorld::touchButton));
+    */
     
     
-    
-    cocostudio::ArmatureDataManager::getInstance()->addArmatureFileInfo("MyAnimation/MyAnimation.ExportJson");
-    cocostudio::Armature* armature = cocostudio::Armature::create("MyAnimation");
+    cocostudio::ArmatureDataManager::getInstance()->addArmatureFileInfo("Animation2/Animation2.ExportJson");
+    cocostudio::Armature* armature = cocostudio::Armature::create("Animation2");
     armature->setTag(AM_MYANIMATION);
+    
     
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Point origin = Director::getInstance()->getVisibleOrigin();
@@ -127,8 +131,26 @@ bool HelloWorld::init()
                                 origin.y + visibleSize.height/2));
     this->addChild(armature);
     
+    armature->getAnimation()->play("a2");
+    
+    
+    auto listener = EventListenerTouchAllAtOnce::create();
+    listener->onTouchesEnded = CC_CALLBACK_2(HelloWorld::onTouchesEnded, this);
+    
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+    
+    //setTouchEnabled(true);
+    
     return true;
 }
+
+void HelloWorld::onTouchesEnded(const std::vector<Touch*>&  touches, Event* event)
+{
+    ++displayIndex;
+    displayIndex = (displayIndex) % 4;
+    ((cocostudio::Armature*)getChildByTag(AM_MYANIMATION))->getBone("bone3")->changeDisplayByIndex(displayIndex, true);
+}
+
 
 //实现
 void HelloWorld::touchButton(Ref *pSender,TouchEventType eventType)

@@ -69,6 +69,7 @@
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
+		DA78496719206F5900E41B9B /* Animation2 in Resources */ = {isa = PBXBuildFile; fileRef = DA78496619206F5900E41B9B /* Animation2 */; };
 		DA8EF86F19203ECA008069AA /* MyUI_1 in Resources */ = {isa = PBXBuildFile; fileRef = DA8EF86E19203ECA008069AA /* MyUI_1 */; };
 		DA8EF87319203EEB008069AA /* MyAnimation in Resources */ = {isa = PBXBuildFile; fileRef = DA8EF87219203EEB008069AA /* MyAnimation */; };
 		DAAAE6D2191DC6A5007A88F5 /* GUI in Resources */ = {isa = PBXBuildFile; fileRef = DAAAE6D0191DC6A5007A88F5 /* GUI */; };
@@ -271,6 +272,7 @@
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		DA78496619206F5900E41B9B /* Animation2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Animation2; sourceTree = "<group>"; };
 		DA8EF86E19203ECA008069AA /* MyUI_1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MyUI_1; sourceTree = "<group>"; };
 		DA8EF87219203EEB008069AA /* MyAnimation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MyAnimation; sourceTree = "<group>"; };
 		DAAAE6D0191DC6A5007A88F5 /* GUI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GUI; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DA78496619206F5900E41B9B /* Animation2 */,
 				DA8EF87219203EEB008069AA /* MyAnimation */,
 				DA8EF86E19203ECA008069AA /* MyUI_1 */,
 				DAAAE6D0191DC6A5007A88F5 /* GUI */,
@@ -659,6 +662,7 @@
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
+				DA78496719206F5900E41B9B /* Animation2 in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,

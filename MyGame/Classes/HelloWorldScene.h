@@ -35,6 +35,7 @@ public:
     void runningSchedule(float dt);
     void touchButton(Ref *pSender, cocos2d::ui::TouchEventType eventType);
     void movementCallback(cocostudio::Armature * armature, cocostudio::MovementEventType type, const char * name);
+    void onTouchesEnded(const std::vector<Touch*>&  touches, Event* event);
 
     
     // implement the "static create()" method manually
