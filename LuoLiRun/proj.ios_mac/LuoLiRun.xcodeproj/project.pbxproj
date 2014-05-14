@@ -113,6 +113,7 @@
 		DA784A361921C46300E41B9B /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = DA784A0B1921C46300E41B9B /* star.png */; };
 		DA784A371921C46300E41B9B /* tb.png in Resources */ = {isa = PBXBuildFile; fileRef = DA784A0C1921C46300E41B9B /* tb.png */; };
 		DA784A3C1921C4AD00E41B9B /* GameMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA784A3A1921C4AD00E41B9B /* GameMenuScene.cpp */; };
+		DA784A4019230AFD00E41B9B /* GameAboutScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA784A3E19230AFD00E41B9B /* GameAboutScene.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -356,6 +357,8 @@
 		DA784A0C1921C46300E41B9B /* tb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tb.png; sourceTree = "<group>"; };
 		DA784A3A1921C4AD00E41B9B /* GameMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameMenuScene.cpp; sourceTree = "<group>"; };
 		DA784A3B1921C4AD00E41B9B /* GameMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMenuScene.h; sourceTree = "<group>"; };
+		DA784A3E19230AFD00E41B9B /* GameAboutScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameAboutScene.cpp; sourceTree = "<group>"; };
+		DA784A3F19230AFD00E41B9B /* GameAboutScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameAboutScene.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -431,6 +434,8 @@
 				1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */,
 				DA784A3A1921C4AD00E41B9B /* GameMenuScene.cpp */,
 				DA784A3B1921C4AD00E41B9B /* GameMenuScene.h */,
+				DA784A3E19230AFD00E41B9B /* GameAboutScene.cpp */,
+				DA784A3F19230AFD00E41B9B /* GameAboutScene.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -849,6 +854,7 @@
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				DA784A3C1921C4AD00E41B9B /* GameMenuScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				DA784A4019230AFD00E41B9B /* GameAboutScene.cpp in Sources */,
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

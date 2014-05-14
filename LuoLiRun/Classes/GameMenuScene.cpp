@@ -7,7 +7,7 @@
 //
 
 #include "GameMenuScene.h"
-//#include "GameAboutScene.h"
+#include "GameAboutScene.h"
 #include "SimpleAudioEngine.h"
 
 USING_NS_CC;
@@ -39,25 +39,25 @@ bool GameMenu::init()
     
     //菜单背景
     Sprite* bg = Sprite::create("MainMenu.png");
-    bg->setScale(0.5);
+    //bg->setScale(0.5);
     bg->setPosition(Point(size.width/2, size.height/2) );
     this->addChild(bg, 0,0);
     
     //按钮
     auto *newGameItem = MenuItemImage::create("newgameA.png", "newgameB.png", CC_CALLBACK_1(GameMenu::menuNewGameCallback, this));
-    newGameItem->setScale(0.5);
-    newGameItem->setPosition(Point(size.width / 2 + 40,size.height / 2 - 20));
+    //newGameItem->setScale(0.5);
+    newGameItem->setPosition(Point(size.width / 2 + 40,size.height / 2 + 20));
     newGameItem->setEnabled(false);
     auto *continueItem = MenuItemImage::create("continueA.png", "continueB.png",CC_CALLBACK_1(GameMenu::menuContinueCallback, this));
-    continueItem->setScale(0.5);
-    continueItem->setPosition(Point(size.width / 2 + 40,size.height / 2 - 60));
+    //continueItem->setScale(0.5);
+    continueItem->setPosition(Point(size.width / 2 + 40,size.height / 2 - 50));
     continueItem->setEnabled(false);
     auto *aboutItem = MenuItemImage::create("aboutA.png", "aboutB.png", CC_CALLBACK_1(GameMenu::menuAboutCallback, this));
-    aboutItem->setScale(0.5);
-    aboutItem->setPosition(Point(size.width / 2 + 40,size.height / 2 - 100));
+    //aboutItem->setScale(0.5);
+    aboutItem->setPosition(Point(size.width / 2 + 40,size.height / 2 - 120));
     aboutItem->setEnabled(false);
     soundItem = MenuItemImage::create("sound-on-A.png", "sound-on-B.png", CC_CALLBACK_1(GameMenu::menuSoundCallback, this));
-    soundItem->setScale(0.5);
+    //soundItem->setScale(0.5);
     soundItem->setEnabled(false);
     soundItem->setPosition(Point(40,40));
     auto mainmenu = Menu::create(newGameItem,continueItem,aboutItem,soundItem,NULL);
@@ -118,8 +118,9 @@ void GameMenu::menuContinueCallback(Ref* pSender)
 
 void GameMenu::menuAboutCallback(Ref* pSender)
 {
+    // setDepthTest：设置深度测试——可以用于自动处理遮挡关系
     Director::getInstance()->setDepthTest(true);
-//    CCDirector::getInstance()->replaceScene(CCTransitionPageTurn::create(0.5,GameAbout::scene(), false));
+    Director::getInstance()->replaceScene(TransitionPageTurn::create(0.5,GameAbout::scene(), false));
 }
 
 void GameMenu::onEnterTransitionDidFinish()
