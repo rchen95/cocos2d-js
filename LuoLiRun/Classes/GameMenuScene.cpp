@@ -8,6 +8,7 @@
 
 #include "GameMenuScene.h"
 #include "GameAboutScene.h"
+#include "GameMainScene.h"
 #include "SimpleAudioEngine.h"
 
 USING_NS_CC;
@@ -107,13 +108,13 @@ void GameMenu::onExit(){
 void GameMenu::menuNewGameCallback(Ref* pSender)
 {
     Director::getInstance()->setDepthTest(true);
-    //CCDirector::getInstance()->replaceScene(CCTransitionPageTurn::create(0.5,GameMain::scene(), false));
+    Director::getInstance()->replaceScene(TransitionPageTurn::create(0.5,GameMain::scene(), false));
 }
 
 void GameMenu::menuContinueCallback(Ref* pSender)
 {
     Director::getInstance()->setDepthTest(true);
-    //CCDirector::getInstance()->replaceScene(CCTransitionPageTurn::create(0.5,GameMain::scene(), false));
+    Director::getInstance()->replaceScene(TransitionPageTurn::create(0.5,GameMain::scene(), false));
 }
 
 void GameMenu::menuAboutCallback(Ref* pSender)

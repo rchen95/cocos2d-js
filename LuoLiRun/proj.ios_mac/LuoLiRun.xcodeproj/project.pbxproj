@@ -114,6 +114,11 @@
 		DA784A371921C46300E41B9B /* tb.png in Resources */ = {isa = PBXBuildFile; fileRef = DA784A0C1921C46300E41B9B /* tb.png */; };
 		DA784A3C1921C4AD00E41B9B /* GameMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA784A3A1921C4AD00E41B9B /* GameMenuScene.cpp */; };
 		DA784A4019230AFD00E41B9B /* GameAboutScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA784A3E19230AFD00E41B9B /* GameAboutScene.cpp */; };
+		DA784A45192310E400E41B9B /* GameObjStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA784A43192310E400E41B9B /* GameObjStar.cpp */; };
+		DA784A481923122900E41B9B /* GameMark.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA784A461923122900E41B9B /* GameMark.cpp */; };
+		DA784A4B1923171F00E41B9B /* GameObjHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA784A491923171E00E41B9B /* GameObjHero.cpp */; };
+		DA784A4E192466CF00E41B9B /* GameMainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA784A4C192466CF00E41B9B /* GameMainScene.cpp */; };
+		DA784A511924676000E41B9B /* GameObjMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA784A4F1924676000E41B9B /* GameObjMap.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -359,6 +364,17 @@
 		DA784A3B1921C4AD00E41B9B /* GameMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMenuScene.h; sourceTree = "<group>"; };
 		DA784A3E19230AFD00E41B9B /* GameAboutScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameAboutScene.cpp; sourceTree = "<group>"; };
 		DA784A3F19230AFD00E41B9B /* GameAboutScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameAboutScene.h; sourceTree = "<group>"; };
+		DA784A43192310E400E41B9B /* GameObjStar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObjStar.cpp; sourceTree = "<group>"; };
+		DA784A44192310E400E41B9B /* GameObjStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObjStar.h; sourceTree = "<group>"; };
+		DA784A461923122900E41B9B /* GameMark.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameMark.cpp; sourceTree = "<group>"; };
+		DA784A471923122900E41B9B /* GameMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMark.h; sourceTree = "<group>"; };
+		DA784A491923171E00E41B9B /* GameObjHero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObjHero.cpp; sourceTree = "<group>"; };
+		DA784A4A1923171E00E41B9B /* GameObjHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObjHero.h; sourceTree = "<group>"; };
+		DA784A4C192466CF00E41B9B /* GameMainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameMainScene.cpp; sourceTree = "<group>"; };
+		DA784A4D192466CF00E41B9B /* GameMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMainScene.h; sourceTree = "<group>"; };
+		DA784A4F1924676000E41B9B /* GameObjMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObjMap.cpp; sourceTree = "<group>"; };
+		DA784A501924676000E41B9B /* GameObjMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObjMap.h; sourceTree = "<group>"; };
+		DA784A52192467FA00E41B9B /* GameConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConst.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -436,6 +452,17 @@
 				DA784A3B1921C4AD00E41B9B /* GameMenuScene.h */,
 				DA784A3E19230AFD00E41B9B /* GameAboutScene.cpp */,
 				DA784A3F19230AFD00E41B9B /* GameAboutScene.h */,
+				DA784A43192310E400E41B9B /* GameObjStar.cpp */,
+				DA784A44192310E400E41B9B /* GameObjStar.h */,
+				DA784A461923122900E41B9B /* GameMark.cpp */,
+				DA784A471923122900E41B9B /* GameMark.h */,
+				DA784A491923171E00E41B9B /* GameObjHero.cpp */,
+				DA784A4A1923171E00E41B9B /* GameObjHero.h */,
+				DA784A4C192466CF00E41B9B /* GameMainScene.cpp */,
+				DA784A4D192466CF00E41B9B /* GameMainScene.h */,
+				DA784A4F1924676000E41B9B /* GameObjMap.cpp */,
+				DA784A501924676000E41B9B /* GameObjMap.h */,
+				DA784A52192467FA00E41B9B /* GameConst.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -851,11 +878,16 @@
 			files = (
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				DA784A4E192466CF00E41B9B /* GameMainScene.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				DA784A3C1921C4AD00E41B9B /* GameMenuScene.cpp in Sources */,
+				DA784A481923122900E41B9B /* GameMark.cpp in Sources */,
+				DA784A4B1923171F00E41B9B /* GameObjHero.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				DA784A4019230AFD00E41B9B /* GameAboutScene.cpp in Sources */,
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
+				DA784A511924676000E41B9B /* GameObjMap.cpp in Sources */,
+				DA784A45192310E400E41B9B /* GameObjStar.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
