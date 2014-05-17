@@ -19,8 +19,9 @@ GameObjMap::~GameObjMap(){
 void GameObjMap::bg1change(){
     //运动出屏幕重设位置，运动
     Sprite * bg = (Sprite *)this->getChildByTag(0);
-    bg->setPosition(Point(480,320));
-    bg->runAction(CCSequence::create(CCMoveBy::create(20,Point(-960,0)),CCCallFunc::create(this, callfunc_selector(GameObjMap::bg1change)),NULL));
+    //bg->setPosition(Point(480,320));
+    bg->setPosition(Point(960,640));
+    bg->runAction(CCSequence::create(CCMoveBy::create(20,Point(-960*2,0)),CCCallFunc::create(this, callfunc_selector(GameObjMap::bg1change)),NULL));
     for(int i = 0;i < 5;i ++){
         ((GameObjStar *)stars1.at(i))->set_visable(true);
     }
@@ -29,8 +30,9 @@ void GameObjMap::bg1change(){
 void GameObjMap::bg2change(){
     //运动出屏幕重设位置，运动
     Sprite * bg = (Sprite *)this->getChildByTag(1);
-    bg->setPosition(Point(480,320));
-    bg->runAction(CCSequence::create(CCMoveBy::create(20,Point(-960,0)),CCCallFunc::create(this, callfunc_selector(GameObjMap::bg2change)),NULL));
+    //bg->setPosition(Point(480,320));
+    bg->setPosition(Point(960,640));
+    bg->runAction(CCSequence::create(CCMoveBy::create(20,Point(-960*2,0)),CCCallFunc::create(this, callfunc_selector(GameObjMap::bg2change)),NULL));
     for(int i = 0;i < 5;i ++){
         ((GameObjStar *)stars2.at(i))->set_visable(true);
     }
@@ -39,27 +41,35 @@ void GameObjMap::bg2change(){
 void GameObjMap::onEnter(){
     Node::onEnter();
     Size size = CCDirector::getInstance()->getWinSize();
-    this->setContentSize(Size(960,320));
+    //this->setContentSize(Size(960,320));
+    this->setContentSize(Size(960,640));
+    
     Sprite* bg1 = Sprite::create("back_1.png");
-    //bg1->setScale(0.5);
+    //bg1->setScale(1.5);
     bg1->setAnchorPoint(Point(0,1));
     bg1->setPosition(Point(0, size.height) );
     this->addChild(bg1,0,0);
+    /*
     Sprite* bgdi1 = Sprite::create("back_5.png");
     bgdi1->setAnchorPoint(Point(0,0));
     bgdi1->setPosition(Point(0,-124) );
     bg1->addChild(bgdi1,1);
-    Sprite* bg2 = Sprite::create("back_1.png");
-    //bg2->setScale(0.5);
+    */
+    Sprite* bg2 = Sprite::create("back_5.png");
+    //bg2->setScale(1.5);
     bg2->setAnchorPoint(Point(0,1));
     bg2->setPosition(Point(size.width, size.height) );
     this->addChild(bg2,0,1);
+    
+    /*
     Sprite* bgdi2 = Sprite::create("back_5.png");
     bgdi2->setAnchorPoint(Point(0,0));
     bgdi2->setPosition(Point(0,-124) );
     bg2->addChild(bgdi2,1);
-    bg1->runAction(CCSequence::create(CCMoveBy::create(10,Point(-480,0)),CCCallFunc::create(this, callfunc_selector(GameObjMap::bg1change)),NULL));
-    bg2->runAction(CCSequence::create(CCMoveBy::create(20,Point(-960,0)),CCCallFunc::create(this, callfunc_selector(GameObjMap::bg2change)),NULL));
+     */
+    
+    bg1->runAction(CCSequence::create(CCMoveBy::create(10,Point(-480*2,0)),CCCallFunc::create(this, callfunc_selector(GameObjMap::bg1change)),NULL));
+    bg2->runAction(CCSequence::create(CCMoveBy::create(20,Point(-960*2,0)),CCCallFunc::create(this, callfunc_selector(GameObjMap::bg2change)),NULL));
     // stars1 = CCArray::create(5);
     // stars2 = CCArray::create(5);
 	//stars1=new CCArray(5);
@@ -134,7 +144,7 @@ void GameObjMap::onEnter(){
             bg1->addChild(road,1);
         }
         if(bg2shu[i] != -1){
-            CCSprite* road1;
+            Sprite* road1;
             switch(bg2shu[i]){
                 case 0:
                     road1 = Sprite::create("road_2.png");

@@ -44,7 +44,7 @@ bool GameAbout::init()
     char inf[256];
     sprintf(inf,"name:loli run\n\n program:shuoquan man\n\n art design:zuyi li\n\n company:hz books\n\n    powered by cocos2D-x");
     // CCLabelTTF *myjineng = CCLabelTTF::create(inf,CCSizeMake(400,400),kCCTextAlignmentLeft, "Marker Felt", 20);
-	Label *myjineng=Label::create(inf,"Marker Felt",20, Size(400,400),kCCTextAlignmentLeft);
+	Label *myjineng=Label::createWithTTF(inf,"Marker Felt",20, Size(400,400),TextHAlignment::LEFT);
     myjineng->setAnchorPoint(Point(0,1));
     myjineng->setColor(Color3B(0,0,0));
     myjineng->setPosition(Point(200,260));

@@ -38,7 +38,8 @@ bool GameMain::init()
     addChild(map,0);
     hero = new GameObjHero();
     //hero->setScale(0.5);
-    hero->setPosition(Point(100,160));
+    //hero->setPosition(Point(100,160));
+    hero->setPosition(Point(100,350));
     addChild(hero,1);
     gamemark = new GameMark();
     addChild(gamemark,4);
